@@ -63,7 +63,7 @@ def main():
     # update
     if 'update' in sys.argv:
         # clear & download
-        remove_dir(config.cache_path)
+        remove_dir(config.cache)
         download_pages(based_urls, 'based_page')
 
     # return all detail_link of one page

@@ -1,4 +1,4 @@
-__all__ = ["write_file", "log", "files", "remove_dir", "Dict"]
+__all__ = ["write_file", "log", "files", "remove_dir", "Dict", "save_jsonify"]
 
 
 # typing hint
@@ -10,6 +10,13 @@ from os import listdir
 from os.path import isfile, join
 
 
+def save_jsonify(data, path):
+    import json
+    str = json.dumps(data, indent=2, ensure_ascii=False)
+    with open(path, 'w+') as f:
+        f.write(str)
+
+
 def remove_dir(path: str):
     from shutil import rmtree
     rmtree(path)
@@ -17,15 +24,19 @@ def remove_dir(path: str):
 
 def files(dir_path: str) -> Iterable[str]:
     '''
-    return list of dir by path
+    return files list by dir path
     '''
     r = []
-    for f in listdir(dir_path):
-        f_path = join(dir_path, f)
-        if isfile(f_path):
-            r.append(f_path)
-    r.sort()
-    return r
+    try:
+        for f in listdir(dir_path):
+            f_path = join(dir_path, f)
+            if isfile(f_path):
+                r.append(f_path)
+        r.sort()
+    except FileNotFoundError:
+        pass
+    finally:
+        return r
 
 
 def check_dir(filename: str):

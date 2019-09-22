@@ -128,3 +128,4 @@ raw/
 .vscode/
 none/
 test.py
+result.json

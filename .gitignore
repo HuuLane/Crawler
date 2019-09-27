@@ -128,6 +128,6 @@ raw/
 .vscode/
 none/
 test.py
-result.json
+*.json
 kuwo.json
 assignment/

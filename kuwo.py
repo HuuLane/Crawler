@@ -1,4 +1,3 @@
-from utils import *
 import requests
 from pyquery import PyQuery as pq
 
@@ -16,7 +15,6 @@ def main():
         )
 
     data = list(map(get_info, range(1, 22+1)))
-    save_jsonify(data, './kugou.json')
 
 
 if __name__ == "__main__":

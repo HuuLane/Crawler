@@ -131,3 +131,5 @@ test.py
 *.json
 kuwo.json
 assignment/
+maoyan.sqlite
+cached/

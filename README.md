@@ -1,14 +1,15 @@
-# crawler demo
+# ass-4
 
-## idea
+## how to use?
 
-- Prepare the links.
-- Download them & save them as local files.
-- Observe the page & preapare the element selector.
-- Use third-party package to parse the HTML & get you-wanted data.
-- Josnify the data and save to local.
+```sh
+# install the dependencies
+pip install -r requirements.txt
 
-## demo
+# run
+python3.7 main.py
+```
 
-[simple](kuwo.py)
-[complicated](xiaozhu.py)
+## results
+
+![results](results.png)
